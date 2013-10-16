@@ -9,4 +9,20 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Marmelad::Application.config.secret_key_base = '32d7ec8a1f8c49922f4a089288f600f4eaba54776f5f4153f12d2682f3fad571d7665dfe072c6aca61dade579b66b18bbdfd0dcdea4040e54e859296c5ad7091'
+
+require'securerandom'
+
+def secure_token
+  token_file=Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token=SecureRandom.hex(64)
+    File.write(token_file,token)
+    token
+  end
+end
+
+Marmelad::Application.config.secret_key_base=secure_token
