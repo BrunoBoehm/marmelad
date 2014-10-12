@@ -27,7 +27,7 @@ font-family: 'Open Sans', sans-serif;
 
 h1, h2 {
 font-family: 'Shadows Into Light', cursive;
-font-size: 50px;
+font-size: 40px;
 }
 
 h3 {
@@ -36,8 +36,35 @@ font-size: 26px;
 }
 
 div.article p {
-font-size: 16px;
+font-size: 24px;
 line-height: 170%;
+}
+
+
+.navbar-inverse {
+background: url(image-path("header-texture-red.jpg")) repeat-x;
+}
+
+.navbar-inverse .navbar-brand {
+font-family: 'Shadows Into Light', cursive;
+color: white;
+font-size: 38px;
+}
+
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+margin-left: 0px;
+}
+
+.navbar-brand a, a:visited, a:hover {
+color: white;
+}
+
+
+
+.navbar-inverse .navbar-nav > li > a {
+color: #FFFFFF;
+font-family: 'Shadows Into Light', cursive;
+font-size: 23px;
 }
 
 /* HEADER
@@ -94,6 +121,8 @@ text-align: justify;
 
 div.panel, div.jumbotron {
 background-color: white;
+padding: 4px;
+position:relative;
 }
 
 .panel-default > .panel-heading {
@@ -111,7 +140,8 @@ border:none;
 
 .panel-body {
 padding: 0;
-margin-left: 20px
+margin-left: 20px;
+overflow: hidden;
 }
 
 .btn-primary {
@@ -125,6 +155,9 @@ border: none;
 	margin-left: 20px;
 }
 
+.pull-right img {
+	margin-left: 20px;
+}
 
 div.field textarea {
 	width:90%;
@@ -160,6 +193,28 @@ div.thumbnail {
 
 .thumbnail h3 {
 	margin: 10px 0;
-	border-left: 1px solid #F1F1F1;
+	border-left: 1px solid #DADADA;
 	padding-left: 10px;
+}
+
+div.promo {
+	background: url(image-path("promo-tartan.png")) no-repeat;
+	width:160px;
+	height:160px;
+	position:absolute;
+	top: 0px;
+	right: 0px;
+}
+
+div.promotxt {
+	-ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    text-align: center;
+	font-family: 'Shadows Into Light', cursive;
+	color: white;
+	font-size: 20px;
+	line-height: 120%;
+	padding-left: 70px;
+
 }
