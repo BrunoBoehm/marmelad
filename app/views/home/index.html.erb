@@ -72,11 +72,12 @@
 	</div>
 </div>	
 <div class="row">
+
 <% end %>
 	<div class="col-sm-6 col-md-4">
 	  <div class="thumbnail">
 	    <img src="http://placekitten.com/g/350/300" alt="...">
-	    <span class="label label-primary">#société</span>
+	    <span class="label label-primary"><% unless post.category.nil? %><%= link_to post.category.name, post.category %><% end %></span>
 	    <div class="caption">
 	      <h3><%= link_to post.question, post %></h3>
 	      <p><%= truncate("#{post.answer}", length: 150, separator: ' ') %></p>

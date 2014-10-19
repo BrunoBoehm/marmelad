@@ -20,6 +20,9 @@
     <%= f.text_area :answer %>
   </div>
   <div class="field">
+    <%= f.select :category_id, Category.all.collect {|x| [x.name, x.id] }, :prompt => "Select A Category" %>
+  </div>  
+  <div class="field">
     <%= f.label :featured %><br>
     <%= f.check_box :featured %>
   </div>
